@@ -1,0 +1,79 @@
+Maven Installation and setup
+Some important commands to Build Test and Deploy the code 
+
+Maven:
+
+1) It is an Automation project management tool developed by apached software foundation.
+
+2) It is based on POM(Project Object Model).
+
+3) It is build tool and manages dependencies.
+
+4) It can build any number of projects in to desired output. Such as jar, war.
+
+5) It is mostly used for Java projects.
+
+6) Maven is written in java.
+
+Linux commands on Ubuntu for maven installation:
+
+https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/  --- apache repo for maven
+
+suod -i --to change as user root
+
+wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+
+tar -zxvf apache-maven-3.9.9-bin.tar.gz
+
+cd apache-maven-3.9.9/
+
+install Java and Maven
+
+sudo apt install openjdk-21-jdk
+
+sudo apt install maven -y
+
+--to install archetype:generate
+mvn archetype:generate
+
+choose number: enter
+chosse number:	enter
+groupid: batch
+artifactId: devops
+snapshort : default 
+
+--a devops folder/dir will create 
+cd devops/
+---to compile the code
+mvn compile 
+--app.class file created 
+-- test the code
+mvn test
+
+--create jar file
+mvn package
+/root/devops/target/devops-1.0-SNAPSHOT.jar -- jar file created 
+
+deploy the code
+mvn install
+
+/root/devops/target/devops-1.0-SNAPSHOT.jar to /root/.m2/repository/batch/devops/1.0-SNAPSHOT/devops-1.0-SNAPSHOT.jar
+
+-- to install second project
+
+--get the maven stand alone application from git 
+
+git clone https://github.com/MithunTechnologiesDevOps/maven-web-application.git
+
+cd maven-web-application
+
+mvn compile
+mvn test
+mvn package
+mvn install
+
+Installing /root/maven-web-application/pom.xml to /root/.m2/repository/com/mt/maven-web-application/0.0.1-SNAPSHOT/maven-web-application-0.0.1-SNAPSHOT.pom
+Installing /root/maven-web-application/pom.xml to /root/.m2/repository/com/mt/maven-web-application/0.0.1-SNAPSHOT/maven-web-application-0.0.1-SNAPSHOT.pom
+
+This is the full Doc to learn maven
+
